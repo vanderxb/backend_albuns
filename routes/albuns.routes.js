@@ -88,10 +88,7 @@ router.delete('/delete/:id',(req,res) =>{
 router.put('/status/:id',(req,res) =>{
     const idParam = req.params.id;
     let index = albuns.findIndex(album => album.id == idParam);
-    if(albuns[index].assistido === false){
-        albuns[index].assistido = true
-    }else{
-        albuns[index].assistido = false
-    }
+    albuns[index].assistido === false ? albuns[index].assistido = true : albuns[index].assistido = false;
+
     res.send(albuns);
 });
