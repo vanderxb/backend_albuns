@@ -12,8 +12,8 @@ const albuns = [
         imagem:"https://www.vagalume.com.br/legiao-urbana/discografia/dois.jpg",
         genero: "Rock",
         nota: 8,
-        assistido: false,
-        color: "grey"
+        status: false,
+        statuscolor: "grey"
     },
     {
         id: 2,
@@ -22,8 +22,8 @@ const albuns = [
         imagem:"https://www.vagalume.com.br/racionais-mcs/discografia/sobrevivendo-no-inferno.jpg",
         genero: "Rap",
         nota: 5,
-        assistido: false,
-        color: "grey"
+        status: false,
+        statuscolor: "grey"
 
     },
     {
@@ -33,8 +33,8 @@ const albuns = [
         imagem: "https://www.vagalume.com.br/milionario-e-jose-rico/discografia/sentimental-demais.jpg",
         genero: "Sertanejo",
         nota: 10,
-        assistido: false,
-        color: "grey"
+        status: false,
+        statuscolor: "grey"
 
     },
     {
@@ -44,8 +44,8 @@ const albuns = [
         imagem: "https://www.vagalume.com.br/djavan/discografia/lilas.jpg",
         genero: "MPB",
         nota: 6,
-        assistido: false,
-        color: "grey"
+        status: false,
+        statuscolor: "grey"
     }
 ]
 
@@ -63,8 +63,8 @@ router.get("/:id", (req,res) =>{
 router.post('/add',(req,res) =>{
     const novoAlbum = req.body;
     novoAlbum.id = albuns[albuns.length -1].id + 1;
-    novoAlbum.assistido = false;
-    novoAlbum.color = "grey"
+    novoAlbum.status = false;
+    novoAlbum.statuscolor = "grey"
     albuns.push(novoAlbum);
     res.send({
         albuns,
@@ -97,11 +97,13 @@ router.delete('/delete/:id',(req,res) =>{
     })
 });
 
-router.put('/status/:id',(req,res) =>{
+router.put('/:status/:id',(req,res) =>{
     const idParam = req.params.id;
+    let statusParam = req.params.status;
+    let statusParamBool = (statusParam == 'true')
     let index = albuns.findIndex(album => album.id == idParam);
-    albuns[index].assistido === false ? albuns[index].assistido = true : albuns[index].assistido = false;
-    albuns[index].color === "grey" ? albuns[index].color = "green" : albuns[index].color = "grey";
+    albuns[index].status = statusParamBool
+    albuns[index].statuscolor === "grey" ? albuns[index].statuscolor = "green" : albuns[index].statuscolor = "grey";
     
     const albumModificado = albuns[index]
     res.send({
