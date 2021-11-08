@@ -7,45 +7,35 @@ module.exports = router;
 const albuns = [
     {
         id: 1,
-        artista: "Legião Urbana",
-        titulo: "II",
-        imagem:"https://www.vagalume.com.br/legiao-urbana/discografia/dois.jpg",
+        artista: "Terno Rei",
+        titulo: "Violeta",
+        imagem:"https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/7/4/d/7/709551553191826.jpg",
         genero: "Rock",
-        nota: 8,
+        nota: 9,
         status: false,
         statuscolor: "grey"
     },
     {
         id: 2,
-        artista: "Racionais MC'S",
-        titulo: "Sobrevivendo no Inferno",
-        imagem:"https://www.vagalume.com.br/racionais-mcs/discografia/sobrevivendo-no-inferno.jpg",
-        genero: "Rap",
-        nota: 5,
-        status: false,
-        statuscolor: "grey"
-
-    },
-    {
-        id: 3,
-        artista: "Milionário e José Rico",
-        titulo: "Sentimental Demais",
-        imagem: "https://www.vagalume.com.br/milionario-e-jose-rico/discografia/sentimental-demais.jpg",
-        genero: "Sertanejo",
+        artista: "Criolo",
+        titulo: "Espiral de Ilusão",
+        imagem:"http://musicainstantanea.com.br/wp-content/uploads/2017/04/18198677_1457209914343776_6120875489976255552_n-700x700.jpg",
+        genero: "Samba",
         nota: 10,
         status: false,
         statuscolor: "grey"
 
     },
     {
-        id: 4,
-        artista: "Djavan",
-        titulo: "Lilás",
-        imagem: "https://www.vagalume.com.br/djavan/discografia/lilas.jpg",
-        genero: "MPB",
-        nota: 6,
+        id: 3,
+        artista: "Sabotage",
+        titulo: "Rap é Compromisso",
+        imagem: "https://armazemdovinil.com/wp-content/uploads/2016/12/450xN.jpg",
+        genero: "Rap",
+        nota: 10,
         status: false,
         statuscolor: "grey"
+
     }
 ]
 
